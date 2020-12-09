@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+--------------FYSA3-------------
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  >express services provider
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Our Application is a platform that faciletate the communication between our  users and the general house maintenance and repair workers.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > finding a right house maintenance and repair worker on time.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > finding a right house maintenance and repair worker on time.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > We are here to help.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > It's not easy but we try.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > Thank you for this awesome application it is really helpful.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Check our Web Application
