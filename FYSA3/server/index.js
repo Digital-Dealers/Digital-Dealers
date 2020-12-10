@@ -4,7 +4,12 @@ var bodyParser = require("body-parser");
 var db = require("../database-mongo");
 
 var app = express();
-
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+app.use(bodyParser.json());
 app.use(express.static(__dirname + "/../react-client/dist"));
 
 app.get("/api/profs", function (req, res) {
@@ -13,6 +18,17 @@ app.get("/api/profs", function (req, res) {
       res.sendStatus(500);
     } else {
       res.json(data);
+    }
+  });
+});
+app.post("/login", (req, res) => {
+  console.log(req.body);
+  db.selectOneWorker(req.body, (err, worker) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      console.log(worker);
+      res.send(worker);
     }
   });
 });
