@@ -1,5 +1,5 @@
 # Digital-Dealers
-> Pithy project description
+> Express Services Provider
 
 ## Team
 
