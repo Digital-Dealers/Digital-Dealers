@@ -1,14 +1,14 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var items = require("../database-mongo");
+var db = require("../database-mongo");
 
 var app = express();
 
 app.use(express.static(__dirname + "/../react-client/dist"));
 
-app.get("/items", function (req, res) {
-  items.selectAll(function (err, data) {
+app.get("/api/profs", function (req, res) {
+  db.selectAllProf(function (err, data) {
     if (err) {
       res.sendStatus(500);
     } else {
