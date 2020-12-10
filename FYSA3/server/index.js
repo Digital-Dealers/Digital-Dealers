@@ -12,8 +12,8 @@ app.use(
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/../react-client/dist"));
 
-app.get("/workers", (req, res) => {
-  db.selectAll((err, data) => {
+app.get("/api/profs", function (req, res) {
+  db.selectAllProf(function (err, data) {
     if (err) {
       res.sendStatus(500);
     } else {
