@@ -19,7 +19,7 @@
 
 ## Usage
 
-> Some usage instructions
+> Finding a right house maintenance and repair worker on time.
 
 ## Requirements
 
