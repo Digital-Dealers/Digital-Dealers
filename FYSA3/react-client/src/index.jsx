@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 import List from "./components/List.jsx";
+import Listworker from "./components/Listworker.jsx"
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class App extends React.Component {
     return (
       <div>
         <h1>Item List</h1>
+       
         <List items={this.state.items} />
+        <Listworker/>
       </div>
     );
   }
