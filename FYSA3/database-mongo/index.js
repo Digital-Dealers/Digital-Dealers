@@ -14,6 +14,7 @@ db.once("open", function () {
 });
 
 var workerSchema = mongoose.Schema({
+  userName: String,
   firstName: String,
   lastName: String,
   email: String,
