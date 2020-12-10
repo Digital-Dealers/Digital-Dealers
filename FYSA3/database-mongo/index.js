@@ -13,19 +13,32 @@ db.once("open", function () {
   console.log("we're connected!");
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var workerSchema = mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  email: String,
+  phone: Number,
+  location: String,
+  prof: String,
+  rate: Number,
+  password: String,
+  infos: String
 });
 
-var Item = mongoose.model("Item", itemSchema);
+var profSchema = mongoose.Schema({
+  name: String,
+  workers: Array
+});
+
+var Worker = mongoose.model("Worker", workerSchema);
+var Prof = mongoose.model("Prof", profSchema);
 
 var selectAll = function (callback) {
-  Item.find({}, function (err, items) {
+  Worker.find({}, function (err, workers) {
     if (err) {
       callback(err, null);
     } else {
-      callback(null, items);
+      callback(null, workers);
     }
   });
 };
