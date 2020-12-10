@@ -1,5 +1,4 @@
-# Space Kitten
-
+# Digital-Dealers
 > Pithy project description
 
 ## Team
