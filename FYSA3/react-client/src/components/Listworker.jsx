@@ -3,16 +3,16 @@ import React from "react";
 class Listworker extends React.Component {
   constructor(props) {
     super(props);
-  }
+    
+    };
+  
   render() {
     return (
       <div>
-     
         <form action="/action_page.php">
-          <label for="workrs">Choose a worker:</label>
+          <label htmlfor="workrs">Choose a worker:</label>
           <select name="workers" id="workers">
-            <option value="worker1">worker1</option>
-          
+            <option value="worker1">{this.props.prof}</option>
           </select>
         </form>
       </div>

@@ -1,38 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import $ from "jquery";
-import List from "./components/List.jsx";
-import Listworker from "./components/Listworker.jsx"
 
+import ListProf from "./components/ListProf.jsx";
+import Listworker from "./components/Listworker.jsx";
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
+      workers: []
     };
-  }
-
-  componentDidMount() {
-    $.ajax({
-      url: "/items",
-      success: (data) => {
-        this.setState({
-          items: data
-        });
-      },
-      error: (err) => {
-        console.log("err", err);
-      }
-    });
   }
 
   render() {
     return (
       <div>
         <h1>Item List</h1>
-       
-        <List items={this.state.items} />
-        <Listworker/>
+        <ListProf data={this.state.profs} />
       </div>
     );
   }

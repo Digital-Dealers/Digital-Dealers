@@ -34,6 +34,16 @@ var profSchema = mongoose.Schema({
 var Worker = mongoose.model("Worker", workerSchema);
 var Prof = mongoose.model("Prof", profSchema);
 
+var selectAllProf = function (callback) {
+  Prof.find({}, function (err, prof) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, prof);
+    }
+  });
+};
+
 var selectAll = function (callback) {
   Worker.find({}, function (err, workers) {
     if (err) {
@@ -45,3 +55,4 @@ var selectAll = function (callback) {
 };
 
 module.exports.selectAll = selectAll;
+module.exports.selectAllProf = selectAllProf;
