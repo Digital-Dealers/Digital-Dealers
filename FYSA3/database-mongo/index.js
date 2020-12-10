@@ -60,6 +60,7 @@ var Order = mongoose.model("Order", orderSchema);
 //   location: "tunis"
 // });
 // order.save();
+
 var selectAll = function (callback) {
   Worker.find({}, function (err, workers) {
     if (err) {
@@ -70,4 +71,16 @@ var selectAll = function (callback) {
   });
 };
 
+const addWorker = function (worker, callback) {
+  var profile = new Worker(worker);
+  profile.save((err, profile) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, profile);
+    }
+  });
+};
+
 module.exports.selectAll = selectAll;
+module.exports.addWorker = addWorker;
