@@ -69,5 +69,19 @@ var selectAll = function (callback) {
     }
   });
 };
+var selectOneWorker = function (worker, callback) {
+  Worker.findOne(
+    { userName: worker.username, password: worker.password },
+    function (err, Worker) {
+      if (err) {
+        callback(err, null);
+      } else {
+        console.log(worker);
+        callback(null, Worker);
+      }
+    }
+  );
+};
 
 module.exports.selectAll = selectAll;
+module.exports.selectOneWorker = selectOneWorker;
