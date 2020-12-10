@@ -25,6 +25,22 @@ var workerSchema = mongoose.Schema({
   password: String,
   infos: String
 });
+var userSchema = mongoose.Schema({
+  userName: String,
+  firstName: String,
+  lastName: String,
+  email: String,
+  phone: Number,
+  location: String,
+  password: String
+});
+var orderSchema = mongoose.Schema({
+  userId: String,
+  workerId: String,
+  date: String,
+  state: String,
+  location: String
+});
 
 var profSchema = mongoose.Schema({
   name: String,
@@ -32,7 +48,9 @@ var profSchema = mongoose.Schema({
 });
 
 var Worker = mongoose.model("Worker", workerSchema);
+var User = mongoose.model("User", userSchema);
 var Prof = mongoose.model("Prof", profSchema);
+var Order = mongoose.model("Order", orderSchema);
 
 var selectAllProf = function (callback) {
   Prof.find({}, function (err, prof) {
@@ -44,15 +62,6 @@ var selectAllProf = function (callback) {
   });
 };
 
-var selectAll = function (callback) {
-  Worker.find({}, function (err, workers) {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, workers);
-    }
-  });
-};
 
 module.exports.selectAll = selectAll;
 module.exports.selectAllProf = selectAllProf;
