@@ -1,12 +1,11 @@
-# Space Kitten
-
-> Pithy project description
+# Digital-Dealers
+> Express Services Provider
 
 ## Team
 
-- **Product Owner**: space cat
-- **Scrum Master**: space cat
-- **Development Team Members**: space cat, space cat
+- **Product Owner**: Nader Hezzi
+- **Scrum Master**: Yasmine Ghoulem
+- **Development Team Members**: Marwen Khorchani, Wassim Khazri.
 
 ## Table of Contents
 
@@ -20,7 +19,7 @@
 
 ## Usage
 
-> Some usage instructions
+> Finding a right house maintenance and repair worker on time.
 
 ## Requirements
 
@@ -37,9 +36,7 @@
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
 ```
 
 ### Roadmap
