@@ -57,7 +57,10 @@ var Order = mongoose.model("Order", orderSchema);
 //   name: "electrician",
 //   workers: ["5fd21a43d7fb12085881099f"]
 // });
-// prof.save();
+
+// order.save();
+
+
 
 var selectAllProf = function (callback) {
   Prof.find({}, function (err, prof) {
@@ -68,18 +71,6 @@ var selectAllProf = function (callback) {
     }
   });
 };
-
-var selectAllOrders = function (callback) {
-  Order.find({}, function (err, orders) {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, orders);
-    }
-  });
-};
-
-
 
 var selectOneWorker = function (worker, callback) {
   Worker.findOne(
@@ -95,6 +86,33 @@ var selectOneWorker = function (worker, callback) {
   );
 };
 
+const addWorker = function (worker, callback) {
+  var profile = new Worker(worker);
+  profile.save((err, profile) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, profile);
+    })
+  }
+
+var selectAllOrders = function (callback) {
+  Order.find({}, function (err, orders) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, orders);
+    }
+  });
+};
+
+
+
+
+
+
+
+module.exports.addWorker = addWorker;
 module.exports.selectAllOrders = selectAllOrders;
 module.exports.selectOneWorker = selectOneWorker;
 module.exports.selectAllProf = selectAllProf;
