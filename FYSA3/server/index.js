@@ -10,6 +10,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+
 app.use(express.static(__dirname + "/../react-client/dist"));
 
 app.get("/api/profs", function (req, res) {
@@ -21,6 +22,7 @@ app.get("/api/profs", function (req, res) {
     }
   });
 });
+
 app.post("/login", (req, res) => {
   console.log(req.body);
   db.selectOneWorker(req.body, (err, worker) => {
@@ -29,6 +31,19 @@ app.post("/login", (req, res) => {
     } else {
       console.log(worker);
       res.send(worker);
+    }
+  });
+});
+
+app.post("/register", (req, res) => {
+  //to do
+  console.log(req.body.data);
+
+  db.addWorker(req.body.data, (err, worker) => {
+    if (err) {
+      res.send("user not created");
+    } else {
+      res.json(worker);
     }
   });
 });
@@ -42,6 +57,7 @@ app.get("/orders", function (req, res) {
     }
   });
 });
+
 app.listen(3000, function () {
   console.log("listening on port 3000!");
 });
