@@ -25,33 +25,15 @@ class ListProf extends React.Component {
       });
   }
 
-  // componentDidMount() {
-  //   axios
-  //     .post("http://localhost:3000/api/workers")
-  //     .then((res) => {
-  //       const workers = res.data;
-  //       console.log("workers", workers);
-  //       this.setState({ workers });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
   handleChange(e) {
-    var prof = e.currentTarget.value; //e.target.value;
-
+    var prof = e.currentTarget.value;
     this.setState({ prof });
-    console.log(this.state.prof);
-    console.log("prof", prof);
 
     axios
       .post("http://localhost:3000/api/workers", { prof })
       .then((res) => {
         console.log("workers sent", res);
-        this.setState({ workers: res.data }, () => {
-          console.log("setstate", this.state.workers);
-        });
+        this.setState({ workers: res.data }, () => {});
       })
       .catch((err) => {
         console.log(err);

@@ -69,7 +69,7 @@ var selectAllProf = function (callback) {
   });
 };
 
-var selectWorkers = function (myWorker,callback) {
+var selectWorkers = function (myWorker, callback) {
   Worker.find({ prof: myWorker }, function (err, workers) {
     if (err) {
       callback(err, null);
