@@ -3,9 +3,8 @@ import React from "react";
 class Listworker extends React.Component {
   constructor(props) {
     super(props);
-    
-    };
-  
+  }
+
   render() {
     return (
       <div>
