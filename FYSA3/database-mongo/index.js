@@ -75,8 +75,5 @@ var selectOneWorker = function (worker, callback) {
   );
 };
 
-
-module.exports.selectAll = selectAll;
 module.exports.selectOneWorker = selectOneWorker;
 module.exports.selectAllProf = selectAllProf;
-
