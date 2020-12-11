@@ -24,8 +24,8 @@ class App extends React.Component {
         <Register />
         <h1> Orders </h1>
         <OrdersList />
-        <h1>Item List</h1>
         <WorkerLogin />
+        <ListProf />
       </div>
     );
   }
