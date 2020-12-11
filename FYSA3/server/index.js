@@ -23,6 +23,17 @@ app.get("/api/profs", function (req, res) {
   });
 });
 
+app.post("/api/workers", function (req, res) {
+  db.selectWorkers(req.body.prof, function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      console.log("data",data)
+      res.json(data);
+    }
+  });
+});
+
 app.post("/login", (req, res) => {
   console.log(req.body);
   db.selectOneWorker(req.body, (err, worker) => {
