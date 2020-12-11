@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+
 class ListProf extends React.Component {
   constructor(props) {
     super(props);
@@ -25,11 +26,13 @@ class ListProf extends React.Component {
   render() {
     return (
       <div>
-        <form action="/action_page.php">
+        <form>
           <label htmlFor="profs">Choose a prof:</label>
           <select name="profs" id="profs">
             {this.state.profs.map((prof, index) => (
-              <option value="profs">{prof.name}</option>
+              <option value="profs" key={index}>
+                {prof.name}
+              </option>
             ))}
           </select>
         </form>

@@ -5,6 +5,7 @@ import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import Listworker from "./components/Listworker.jsx";
 import OrdersList from "./components/OrdersList.jsx";
+import Form from "./components/Form.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,6 +27,8 @@ class App extends React.Component {
         <OrdersList />
         <h1>Item List</h1>
         <WorkerLogin />
+        <ListProf />
+        <Form />
       </div>
     );
   }

@@ -7,6 +7,8 @@ class Register extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(event) {
+    event.preventDefault();
+    console.log(this.refs.userName.value);
     var data = {
       userName: this.refs.userName.value,
       firstName: this.refs.firstName.value,
@@ -34,30 +36,123 @@ class Register extends Component {
     return (
       <div>
         <h3>Worker Sign-Up</h3>
-        <div className="infos">
-          <label for="userName">Username</label>
-          <input ref="userName" style={{ display: "block" }} />
-          <label for="firstName">First Name</label>
-          <input ref="firstName" style={{ display: "block" }} />
-          <label for="lastName">Last Name</label>
-          <input ref="lastName" style={{ display: "block" }} />
-          <label for="email">Email</label>
-          <input ref="email" style={{ display: "block" }} />
-          <label for="phone">Phone</label>
-          <input ref="phone" style={{ display: "block" }} />
-          <label for="location">Location</label>
-          <input ref="location" style={{ display: "block" }} />
-          <label for="password">Password</label>
-          <input ref="password" style={{ display: "block" }} />
-          <label for="infos">infos</label>
-          <input ref="infos" style={{ display: "block" }} />
-          <label for="prof">prof</label>
-          <input ref="prof" style={{ display: "block" }} />
-          <label for="rate">rate</label>
-          <input ref="rate" style={{ display: "block" }} />
-        </div>
-        <div className="Button">
-          <button onClick={this.handleClick}>Create Profile</button>
+        <div className="main-block">
+          <h1>Registration</h1>
+          <form action="/">
+            {" "}
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-user"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="userName"
+              placeholder="Username"
+              required
+            />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-user"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="firstName"
+              placeholder="First Name"
+              required
+            />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-user"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="lastName"
+              placeholder="Last Name"
+              required
+            />
+            <hr />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-envelope"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="email"
+              placeholder="Email"
+              required
+            />
+            <hr />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-envelope"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="phone"
+              placeholder="Phone Number"
+              required
+            />
+            <hr />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-envelope"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="location"
+              placeholder="Location"
+              required
+            />
+            <hr />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-envelope"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="infos"
+              placeholder="Infos"
+              required
+            />
+            <hr />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-envelope"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="prof"
+              placeholder="Profession"
+              required
+            />
+            <hr />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-envelope"></i>
+            </label>
+            <input
+              type="text"
+              name="name"
+              ref="prof"
+              placeholder="Rate"
+              required
+            />
+            <label id="icon" htmlFor="name">
+              <i className="fas fa-unlock-alt"></i>
+            </label>
+            <input
+              type="password"
+              name="name"
+              ref="password"
+              placeholder="Password"
+              required
+            />
+            <hr />
+            <div className="btn-block">
+              <button onClick={this.handleClick} type="submit">
+                Create
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     );
