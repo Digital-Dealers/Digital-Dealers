@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
-import List from "./components/List.jsx";
+import WorkerLogin from "./components/WorkerLogin.jsx";
+import Register from "./components/workerRegister.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,8 +29,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Item List</h1>
-        <List items={this.state.items} />
+        <h2>FYSA3</h2>
+        <Register />
+        <WorkerLogin />
       </div>
     );
   }
