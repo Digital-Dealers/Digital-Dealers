@@ -13,12 +13,25 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "/../react-client/dist"));
 
-app.get("/items", function (req, res) {
-  db.selectAll(function (err, data) {
+
+app.get("/api/profs", function (req, res) {
+  db.selectAllProf(function (err, data) {
     if (err) {
       res.sendStatus(500);
     } else {
       res.json(data);
+    }
+  });
+});
+
+app.post("/login", (req, res) => {
+  console.log(req.body);
+  db.selectOneWorker(req.body, (err, worker) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      console.log(worker);
+      res.send(worker);
     }
   });
 });
@@ -34,6 +47,16 @@ app.post("/register", (req, res) => {
       res.json(worker);
     }
   })
+});
+
+app.get("/orders", function (req, res) {
+  db.selectAllOrders(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
 });
 
 app.listen(3000, function () {

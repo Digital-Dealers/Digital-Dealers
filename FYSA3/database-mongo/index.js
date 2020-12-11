@@ -52,23 +52,38 @@ var User = mongoose.model("User", userSchema);
 var Prof = mongoose.model("Prof", profSchema);
 var Order = mongoose.model("Order", orderSchema);
 
-// const order = new Order({
-//   userId: "5fd21d5a1e87623820886df7",
-//   workerId: "5fd21a43d7fb12085881099f",
-//   date: "13/2/2021",
-//   state: "panding",
-//   location: "tunis"
+
+// const prof = new Prof({
+//   name: "electrician",
+//   workers: ["5fd21a43d7fb12085881099f"]
 // });
+
 // order.save();
 
-var selectAll = function (callback) {
-  Worker.find({}, function (err, workers) {
+
+
+var selectAllProf = function (callback) {
+  Prof.find({}, function (err, prof) {
     if (err) {
       callback(err, null);
     } else {
-      callback(null, workers);
+      callback(null, prof);
     }
   });
+};
+
+var selectOneWorker = function (worker, callback) {
+  Worker.findOne(
+    { userName: worker.username, password: worker.password },
+    function (err, Worker) {
+      if (err) {
+        callback(err, null);
+      } else {
+        console.log(worker);
+        callback(null, Worker);
+      }
+    }
+  );
 };
 
 const addWorker = function (worker, callback) {
@@ -78,9 +93,27 @@ const addWorker = function (worker, callback) {
       callback(err, null);
     } else {
       callback(null, profile);
+    })
+  }
+
+var selectAllOrders = function (callback) {
+  Order.find({}, function (err, orders) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, orders);
     }
   });
 };
 
-module.exports.selectAll = selectAll;
+
+
+
+
+
+
 module.exports.addWorker = addWorker;
+module.exports.selectAllOrders = selectAllOrders;
+module.exports.selectOneWorker = selectOneWorker;
+module.exports.selectAllProf = selectAllProf;
+
