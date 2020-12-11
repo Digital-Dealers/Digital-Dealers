@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 
-
-
 class WorkerLogin extends React.Component {
   constructor(props) {
     super(props);
