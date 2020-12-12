@@ -31,6 +31,15 @@ app.get("/api/workerProfile", function (req, res) {
     }
   });
 });
+app.get("/api/userProfile", function (req, res) {
+  db.selectOneWorker(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
 app.post("/login", (req, res) => {
   console.log(req.body);
   db.selectOneWorker(req.body, (err, worker) => {
