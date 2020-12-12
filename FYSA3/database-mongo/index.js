@@ -82,7 +82,7 @@ var selectWorkers = function (myWorker, callback) {
 
 var selectOneWorker = function (worker, callback) {
   Worker.findOne(
-    { userName: worker.username, password: worker.password },
+    { userName: worker.userName, password: worker.password },
     function (err, Worker) {
       if (err) {
         callback(err, null);
@@ -93,7 +93,19 @@ var selectOneWorker = function (worker, callback) {
     }
   );
 };
-
+var selectOneUser = function (user, callback) {
+  User.findOne(
+    { userName: user.userName, password: user.password },
+    function (err, user) {
+      if (err) {
+        callback(err, null);
+      } else {
+        console.log(user);
+        callback(null, user);
+      }
+    }
+  );
+};
 const addWorker = function (worker, callback) {
   var profile = new Worker(worker);
   profile.save((err, profile) => {
@@ -128,5 +140,6 @@ module.exports.addUser = addUser;
 module.exports.addWorker = addWorker;
 module.exports.selectAllOrders = selectAllOrders;
 module.exports.selectOneWorker = selectOneWorker;
+module.exports.selectOneUser = selectOneUser;
 module.exports.selectAllProf = selectAllProf;
 module.exports.selectWorkers = selectWorkers;

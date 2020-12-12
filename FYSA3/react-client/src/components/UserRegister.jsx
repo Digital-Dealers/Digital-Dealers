@@ -39,98 +39,115 @@ class UserRegister extends Component {
   render() {
     return (
       <div>
-        <h3>Worker Sign-Up</h3>
-        <div className="main-block">
-          <h1>Registration</h1>
-          <form>
-            {" "}
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-user"></i>
-            </label>
-            <input
-              value={this.state.userName}
-              onChange={this.handleChange}
-              type="text"
-              name="userName"
-              placeholder="Username"
-              required
-            />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-user"></i>
-            </label>
-            <input
-              value={this.state.firstName}
-              onChange={this.handleChange}
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              required
-            />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-user"></i>
-            </label>
-            <input
-              value={this.state.lastName}
-              onChange={this.handleChange}
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              value={this.state.email}
-              onChange={this.handleChange}
-              type="text"
-              name="email"
-              placeholder="Email"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              value={this.state.phone}
-              onChange={this.handleChange}
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              value={this.state.location}
-              onChange={this.handleChange}
-              type="text"
-              name="location"
-              placeholder="Location"
-              required
-            />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-unlock-alt"></i>
-            </label>
-            <input
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-            <hr />
-            <div className="btn-block">
-              <button onClick={this.handleClick} type="submit">
-                Create
-              </button>
+        <div>
+          <div className="site-section bg-light">
+            <div className="container">
+              <div className="row mb-5">
+                <div className="col-md-4 mx-auto">
+                  <h2 className="line-bottom text-center">
+                    User Registeration
+                  </h2>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 offset-3">
+                  <div className="testimonial-3">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div className="quick-contact-form bg-white">
+                      <h2>Please fill-in the form to register.</h2>
+                      <form>
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.userName}
+                            name="userName"
+                            onChange={this.handleChange}
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="User name"
+                          />
+                        </div>{" "}
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.firstName}
+                            name="firstName"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="First Name"
+                          />
+                        </div>{" "}
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.LastName}
+                            name="LastName"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Last Name"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="email"
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Email"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.phone}
+                            name="phone"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Phone Number"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.location}
+                            name="location"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Location"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="password"
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Password"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="submit"
+                            value="Send Message"
+                            className="btn btn-primary px-5"
+                          />
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     );
