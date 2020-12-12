@@ -27,8 +27,8 @@ class WorkerLogin extends React.Component {
   }
   render() {
     return (
-      <div class="container">
-        <div class="main">
+      <div className="container">
+        <div className="main">
           <h2>Login Form Validation</h2>
           <form id="form_id" method="post" name="myform">
             <label>User Name :</label>

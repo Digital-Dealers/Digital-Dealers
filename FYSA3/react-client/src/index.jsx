@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Register from "./components/workerRegister.jsx";
 import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import Listworker from "./components/Listworker.jsx";
+import OrdersList from "./components/OrdersList.jsx";
+import UserRegister from "./components/UserRegister.jsx";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +21,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <h2>FYSA3</h2>
+        <Register />
+        <UserRegister />
+        <h1> Orders </h1>
+        <OrdersList />
         <h1>Item List</h1>
         <WorkerLogin />
       </div>

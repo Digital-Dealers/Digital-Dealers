@@ -10,10 +10,29 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+
 app.use(express.static(__dirname + "/../react-client/dist"));
 
 app.get("/api/profs", function (req, res) {
   db.selectAllProf(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
+app.get("/api/workerProfile", function (req, res) {
+  db.selectOneWorker(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
+app.get("/api/userProfile", function (req, res) {
+  db.selectOneWorker(function (err, data) {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -29,6 +48,40 @@ app.post("/login", (req, res) => {
     } else {
       console.log(worker);
       res.send(worker);
+    }
+  });
+});
+
+app.post("/register", (req, res) => {
+  console.log(req.body.data);
+
+  db.addWorker(req.body.data, (err, worker) => {
+    if (err) {
+      res.send("user not created");
+    } else {
+      console.log(worker);
+      res.json(worker);
+    }
+  });
+});
+app.post("/userRegister", (req, res) => {
+  console.log(req.body.data);
+
+  db.addUser(req.body.data, (err, user) => {
+    if (err) {
+      res.send("user not created");
+    } else {
+      res.json(user);
+    }
+  });
+});
+
+app.get("/orders", function (req, res) {
+  db.selectAllOrders(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
     }
   });
 });
