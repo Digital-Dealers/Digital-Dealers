@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -20,16 +21,17 @@ class UserRegister extends Component {
     console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   }
-  handleClick(event) {
-    event.preventDefault();
+  handleClick(e) {
+    e.preventDefault();
     var data = this.state;
     console.log(data);
     axios
-      .post("/register/user", { data })
+      .post("/userRegister", { data })
       .then((res) => {
         console.log(res.data);
       })
       .catch((err) => {
+
         console.log("There's an error", err);
       });
   }
