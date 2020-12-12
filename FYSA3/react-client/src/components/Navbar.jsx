@@ -14,7 +14,7 @@ class Navbar extends React.Component {
           <ul className="site-menu main-menu js-clone-nav ml-auto ">
             <li className="active">
               <a href="index.html" className="nav-link">
-                Home
+                Homes
               </a>
             </li>
             <li
@@ -28,21 +28,6 @@ class Navbar extends React.Component {
                 this.props.handleClick("worker-signup");
               }}>
               <a className="nav-link">Worker Sign-Up</a>
-            </li>
-            <li>
-              <a href="projects.html" className="nav-link">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="blog.html" className="nav-link">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="contact.html" className="nav-link">
-                Contact
-              </a>
             </li>
           </ul>
         </nav>
