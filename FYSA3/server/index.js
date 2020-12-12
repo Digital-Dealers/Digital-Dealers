@@ -58,8 +58,17 @@ app.post("/login", (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
-      console.log(worker);
-      res.send(worker);
+      if (!worker) {
+        db.selectOneUser(req.body, (err, user) => {
+          if (err) {
+            res.sendStatus(500);
+          } else {
+            res.send(user);
+          }
+        });
+      } else {
+        res.send(worker);
+      }
     }
   });
 });
