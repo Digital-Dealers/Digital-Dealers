@@ -33,27 +33,27 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <h3>Worker Sign-Up</h3>
+        <h3>Worker Sign Up</h3>
         <div className="infos">
-          <label for="userName">Username</label>
+          <label htmlFor="userName">Username</label>
           <input ref="userName" style={{ display: "block" }} />
-          <label for="firstName">First Name</label>
+          <label htmlFor="firstName">First Name</label>
           <input ref="firstName" style={{ display: "block" }} />
-          <label for="lastName">Last Name</label>
+          <label htmlFor="lastName">Last Name</label>
           <input ref="lastName" style={{ display: "block" }} />
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input ref="email" style={{ display: "block" }} />
-          <label for="phone">Phone</label>
+          <label htmlFor="phone">Phone</label>
           <input ref="phone" style={{ display: "block" }} />
-          <label for="location">Location</label>
+          <label htmlFor="location">Location</label>
           <input ref="location" style={{ display: "block" }} />
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input ref="password" style={{ display: "block" }} />
-          <label for="infos">infos</label>
+          <label htmlFor="infos">infos</label>
           <input ref="infos" style={{ display: "block" }} />
-          <label for="prof">prof</label>
+          <label htmlFor="prof">prof</label>
           <input ref="prof" style={{ display: "block" }} />
-          <label for="rate">rate</label>
+          <label htmlFor="rate">rate</label>
           <input ref="rate" style={{ display: "block" }} />
         </div>
         <div className="Button">
