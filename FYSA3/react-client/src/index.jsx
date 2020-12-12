@@ -5,7 +5,7 @@ import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import OrdersList from "./components/OrdersList.jsx";
 import UserLogin from "./components/UserLogin.jsx";
-import Feeds from './components/feeds/feeds.jsx'
+import Feeds from "./components/feeds/feeds.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class App extends React.Component {
         <OrdersList />
         <h2>Feeds</h2>
         <Feeds />
+        <ListProf />
       </div>
     );
   }
