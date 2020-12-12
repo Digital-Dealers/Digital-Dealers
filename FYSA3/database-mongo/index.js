@@ -39,7 +39,8 @@ var orderSchema = mongoose.Schema({
   workerId: String,
   date: String,
   state: String,
-  location: String
+  location: String,
+  description: String
 });
 
 var profSchema = mongoose.Schema({

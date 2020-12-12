@@ -4,6 +4,7 @@ import Register from "./components/workerRegister.jsx";
 import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import OrdersList from "./components/OrdersList.jsx";
+import Order from "./components/Order.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class App extends React.Component {
         <OrdersList />
         <WorkerLogin />
         <ListProf />
+        <Order />
       </div>
     );
   }
