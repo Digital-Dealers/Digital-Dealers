@@ -5,6 +5,9 @@ import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import OrdersList from "./components/OrdersList.jsx";
 import Button from 'react-bootstrap/Button';
+import UserLogin from "./components/UserLogin.jsx";
+import Feeds from './components/feeds/feeds.jsx'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +22,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-    
     <div className="site-wrap" id="home-section">
 
       <div className="site-mobile-menu site-navbar-target">

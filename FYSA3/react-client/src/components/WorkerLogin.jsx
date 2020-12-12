@@ -13,12 +13,15 @@ class WorkerLogin extends React.Component {
   }
   handleChange(e) {
     var name = e.target.value;
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({[e.target.name]: e.target.value });
+
+    
   }
   handleClick(user) {
     axios
       .post("/login", user)
       .then((user) => {
+        console.log('post req on login handled')
         console.log(user);
       })
       .catch((error) => {

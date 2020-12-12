@@ -40,6 +40,29 @@ class Register extends Component {
           <div className="col-md-4 mx-auto">
             <h2 className="line-bottom text-center">Registeration Form</h2>
           </div>
+<!--         <h3>Worker Sign Up</h3>
+        <div className="infos">
+          <label htmlFor="userName">Username</label>
+          <input ref="userName" style={{ display: "block" }} />
+          <label htmlFor="firstName">First Name</label>
+          <input ref="firstName" style={{ display: "block" }} />
+          <label htmlFor="lastName">Last Name</label>
+          <input ref="lastName" style={{ display: "block" }} />
+          <label htmlFor="email">Email</label>
+          <input ref="email" style={{ display: "block" }} />
+          <label htmlFor="phone">Phone</label>
+          <input ref="phone" style={{ display: "block" }} />
+          <label htmlFor="location">Location</label>
+          <input ref="location" style={{ display: "block" }} />
+          <label htmlFor="password">Password</label>
+          <input ref="password" style={{ display: "block" }} />
+          <label htmlFor="infos">infos</label>
+          <input ref="infos" style={{ display: "block" }} />
+          <label htmlFor="prof">prof</label>
+          <input ref="prof" style={{ display: "block" }} />
+          <label htmlFor="rate">rate</label>
+          <input ref="rate" style={{ display: "block" }} /> -->
+
         </div>
         <div className="row">
           <div className="col-lg-6 offset-3">
