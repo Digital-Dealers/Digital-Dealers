@@ -21,6 +21,25 @@ app.get("/profs", function (req, res) {
     }
   });
 });
+app.get("/api/workerProfile", function (req, res) {
+  db.selectOneWorker(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
+app.get("/api/userProfile", function (req, res) {
+  db.selectOneWorker(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      console.log("data", data);
+      res.json(data);
+    }
+  });
+});
 
 app.post("/api/workers", function (req, res) {
   db.selectWorkers(req.body.prof, function (err, data) {
@@ -53,7 +72,19 @@ app.post("/register", (req, res) => {
     if (err) {
       res.send("user not created");
     } else {
+      console.log(worker);
       res.json(worker);
+    }
+  });
+});
+app.post("/userRegister", (req, res) => {
+  console.log(req.body.data);
+
+  db.addUser(req.body.data, (err, user) => {
+    if (err) {
+      res.send("user not created");
+    } else {
+      res.json(user);
     }
   });
 });

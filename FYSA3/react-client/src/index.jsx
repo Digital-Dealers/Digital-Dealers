@@ -4,9 +4,11 @@ import Register from "./components/workerRegister.jsx";
 import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import OrdersList from "./components/OrdersList.jsx";
+import UserRegister from "./components/UserRegister.jsx";
 import Button from "react-bootstrap/Button";
 import UserLogin from "./components/UserLogin.jsx";
 import Feeds from "./components/feeds/feeds.jsx";
+
 
 class App extends React.Component {
   constructor(props) {

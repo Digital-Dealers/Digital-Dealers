@@ -103,6 +103,16 @@ const addWorker = function (worker, callback) {
     }
   });
 };
+const addUser = function (user, callback) {
+  var profile = new User(user);
+  profile.save((err, profile) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, profile);
+    }
+  });
+};
 
 var selectAllOrders = function (callback) {
   Order.find({}, function (err, orders) {
@@ -113,7 +123,7 @@ var selectAllOrders = function (callback) {
     }
   });
 };
-
+module.exports.addUser = addUser;
 module.exports.addWorker = addWorker;
 module.exports.selectAllOrders = selectAllOrders;
 module.exports.selectOneWorker = selectOneWorker;

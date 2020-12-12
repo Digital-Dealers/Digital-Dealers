@@ -1,35 +1,41 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
-class Register extends Component {
+class WorkerRegister extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick(event) {
-    var data = {
-      userName: this.refs.userName.value,
-      firstName: this.refs.firstName.value,
-      lastName: this.refs.lastName.value,
-      email: this.refs.email.value,
-      phone: this.refs.phone.value,
-      location: this.refs.location.value,
-      prof: this.refs.prof.value,
-      rate: this.refs.rate.value,
-      password: this.refs.password.value,
-      infos: this.refs.infos.value
+    this.state = {
+      userName: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      location: "",
+      prof: "",
+      rate: "",
+      password: "",
+      infos: ""
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    console.log(e.target.value);
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  handleClick(e) {
+    e.preventDefault();
+    var data = this.state;
     console.log(data);
+
     axios
-      .post("/register", { data })
+      .post("/workerRegister", { data })
       .then((res) => {
         console.log(res.data);
       })
       .catch((err) => {
-        console.log("There's an error", err);
+        console.log("error");
       });
   }
-
   render() {
     return (
       <div>
@@ -92,9 +98,8 @@ class Register extends Component {
               </div>
             </div>
           </div>
-    
     );
   }
 }
 
-export default Register;
+export default WorkerRegister;
