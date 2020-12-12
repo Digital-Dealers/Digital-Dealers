@@ -7,8 +7,6 @@ class Register extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(event) {
-    event.preventDefault();
-    console.log(this.refs.userName.value);
     var data = {
       userName: this.refs.userName.value,
       firstName: this.refs.firstName.value,
@@ -35,126 +33,40 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <h3>Worker Sign-Up</h3>
-        <div className="main-block">
-          <h1>Registration</h1>
-          <form action="/">
-            {" "}
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-user"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="userName"
-              placeholder="Username"
-              required
-            />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-user"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="firstName"
-              placeholder="First Name"
-              required
-            />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-user"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="lastName"
-              placeholder="Last Name"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="email"
-              placeholder="Email"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="phone"
-              placeholder="Phone Number"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="location"
-              placeholder="Location"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="infos"
-              placeholder="Infos"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="prof"
-              placeholder="Profession"
-              required
-            />
-            <hr />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-envelope"></i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              ref="prof"
-              placeholder="Rate"
-              required
-            />
-            <label id="icon" htmlFor="name">
-              <i className="fas fa-unlock-alt"></i>
-            </label>
-            <input
-              type="password"
-              name="name"
-              ref="password"
-              placeholder="Password"
-              required
-            />
-            <hr />
-            <div className="btn-block">
-              <button onClick={this.handleClick} type="submit">
-                Create
-              </button>
+
+    <div className="site-section bg-light">
+      <div className="container">
+        <div className="row mb-5">
+          <div className="col-md-4 mx-auto">
+            <h2 className="line-bottom text-center">Registeration Form</h2>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-6 offset-3">
+            <div className="testimonial-3"><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div className="quick-contact-form bg-white">
+                <h2>Please fill-in the form to register.</h2>
+                <form action="#" method="">
+                  <div className="form-group">
+                    <input type="text" className="form-control" placeholder="Name"/>
+                  </div>
+                  <div className="form-group">
+                    <input type="email" className="form-control" placeholder="Email"/>
+                  </div>
+                  <div className="form-group">
+                    <textarea name="" className="form-control" id="" cols="30" rows="5" placeholder="Message"></textarea>
+                  </div>
+                  <div className="form-group">
+                    <input type="submit" value="Send Message" className="btn btn-primary px-5"/>
+                  </div>
+                </form>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
+    </div>
+ </div>
     );
   }
 }
