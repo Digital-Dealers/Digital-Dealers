@@ -69,6 +69,16 @@ var selectAllProf = function (callback) {
   });
 };
 
+var selectWorkers = function (myWorker, callback) {
+  Worker.find({ prof: myWorker }, function (err, workers) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, workers);
+    }
+  });
+};
+
 var selectOneWorker = function (worker, callback) {
   Worker.findOne(
     { userName: worker.username, password: worker.password },
@@ -118,3 +128,4 @@ module.exports.addWorker = addWorker;
 module.exports.selectAllOrders = selectAllOrders;
 module.exports.selectOneWorker = selectOneWorker;
 module.exports.selectAllProf = selectAllProf;
+module.exports.selectWorkers = selectWorkers;
