@@ -4,6 +4,8 @@ import Register from "./components/workerRegister.jsx";
 import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
 import OrdersList from "./components/OrdersList.jsx";
+import UserLogin from "./components/UserLogin.jsx";
+import Feeds from './components/feeds/feeds.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -18,12 +20,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>FYSA3</h2>
+        <h1>FYSA3</h1>
         <Register />
-        <h1> Orders </h1>
-        <OrdersList />
+        <h2>Worker Sign In</h2>
         <WorkerLogin />
-        <ListProf />
+        <h2>Custumer Sign In</h2>
+        <UserLogin />
+        <h2> Orders </h2>
+        <OrdersList />
+        <h2>Feeds</h2>
+        <Feeds />
       </div>
     );
   }
