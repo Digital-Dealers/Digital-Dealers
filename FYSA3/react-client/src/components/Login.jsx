@@ -15,6 +15,7 @@ class WorkerLogin extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   handleClick(e) {
+    // this is a comment
     e.preventDefault();
     var user = this.state;
     axios
