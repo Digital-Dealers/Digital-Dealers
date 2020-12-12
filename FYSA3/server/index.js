@@ -22,7 +22,15 @@ app.get("/api/profs", function (req, res) {
     }
   });
 });
-
+app.get("/api/workerProfile", function (req, res) {
+  db.selectOneWorker(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
 app.post("/login", (req, res) => {
   console.log(req.body);
   db.selectOneWorker(req.body, (err, worker) => {
@@ -36,14 +44,25 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  //to do
   console.log(req.body.data);
 
   db.addWorker(req.body.data, (err, worker) => {
     if (err) {
       res.send("user not created");
     } else {
+      console.log(worker);
       res.json(worker);
+    }
+  });
+});
+app.post("/userRegister", (req, res) => {
+  console.log(req.body.data);
+
+  db.addUser(req.body.data, (err, user) => {
+    if (err) {
+      res.send("user not created");
+    } else {
+      res.json(user);
     }
   });
 });
