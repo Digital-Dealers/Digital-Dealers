@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from "./Navbar.jsx";
+import Login from "./Login.jsx";
 
 class Home extends React.Component {
   constructor(props) {
@@ -8,271 +10,197 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <main role="main">
-          <div id="myCarousel" className="carousel slide" data-ride="carousel">
-            <ol className="carousel-indicators">
-              <li
-                data-target="#myCarousel"
-                data-slide-to="0"
-                className="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img
-                  className="first-slide"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  alt="First slide"
-                />
-                <div className="container">
-                  <div className="carousel-caption text-left">
-                    <h1>Example headline.</h1>
-                    <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget
-                      quam. Donec id elit non mi porta gravida at eget metus.
-                      Nullam id dolor id nibh ultricies vehicula ut id elit.
-                    </p>
-                    <p>
-                      <a
-                        className="btn btn-lg btn-primary"
-                        href="#"
-                        role="button">
-                        Sign up today
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  className="second-slide"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  alt="Second slide"
-                />
-                <div className="container">
-                  <div className="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget
-                      quam. Donec id elit non mi porta gravida at eget metus.
-                      Nullam id dolor id nibh ultricies vehicula ut id elit.
-                    </p>
-                    <p>
-                      <a
-                        className="btn btn-lg btn-primary"
-                        href="#"
-                        role="button">
-                        Learn more
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  className="third-slide"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  alt="Third slide"
-                />
-                <div className="container">
-                  <div className="carousel-caption text-right">
-                    <h1>One more for good measure.</h1>
-                    <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget
-                      quam. Donec id elit non mi porta gravida at eget metus.
-                      Nullam id dolor id nibh ultricies vehicula ut id elit.
-                    </p>
-                    <p>
-                      <a
-                        className="btn btn-lg btn-primary"
-                        href="#"
-                        role="button">
-                        Browse gallery
-                      </a>
-                    </p>
-                  </div>
-                </div>
+        <div className="site-wrap" id="home-section">
+          <div className="site-mobile-menu site-navbar-target">
+            <div className="site-mobile-menu-header">
+              <div className="site-mobile-menu-close mt-3">
+                <span className="icon-close2 js-menu-toggle"></span>
               </div>
             </div>
-            <a
-              className="carousel-control-prev"
-              href="#myCarousel"
-              role="button"
-              data-slide="prev">
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"></span>
-              <span className="sr-only">Previous</span>
-            </a>
-            <a
-              className="carousel-control-next"
-              href="#myCarousel"
-              role="button"
-              data-slide="next">
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"></span>
-              <span className="sr-only">Next</span>
-            </a>
+            <div className="site-mobile-menu-body"></div>
           </div>
 
-          <div className="container marketing">
-            <h1>Our Services</h1>
-            <br />
-            <div className="row">
-              <div className="col-lg-4">
-                <img
-                  className="rounded-circle"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  alt="Generic placeholder image"
-                  width="140"
-                  height="140"
-                />
-                <h2>Heading</h2>
-                <p>
-                  Donec sed odio dui. Etiam porta sem malesuada magna mollis
-                  euismod. Nullam id dolor id nibh ultricies vehicula ut id
-                  elit. Morbi leo risus, porta ac consectetur ac, vestibulum at
-                  eros. Praesent commodo cursus magna.
-                </p>
-                <p>
-                  <a className="btn btn-secondary" href="#" role="button">
-                    View details &raquo;
-                  </a>
-                </p>
-              </div>
-              <div className="col-lg-4">
-                <img
-                  className="rounded-circle"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  alt="Generic placeholder image"
-                  width="140"
-                  height="140"
-                />
-                <h2>Heading</h2>
-                <p>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor
-                  ligula, eget lacinia odio sem nec elit. Cras mattis
-                  consectetur purus sit amet fermentum. Fusce dapibus, tellus ac
-                  cursus commodo, tortor mauris condimentum nibh.
-                </p>
-                <p>
-                  <a className="btn btn-secondary" href="#" role="button">
-                    View details &raquo;
-                  </a>
-                </p>
-              </div>
-              <div className="col-lg-4">
-                <img
-                  className="rounded-circle"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  alt="Generic placeholder image"
-                  width="140"
-                  height="140"
-                />
-                <h2>Heading</h2>
-                <p>
-                  Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-                  egestas eget quam. Vestibulum id ligula porta felis euismod
-                  semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                  condimentum nibh, ut fermentum massa justo sit amet risus.
-                </p>
-                <p>
-                  <a className="btn btn-secondary" href="#" role="button">
-                    View details &raquo;
-                  </a>
-                </p>
+          <header className="site-navbar site-navbar-target" role="banner">
+            <div className="container">
+              <div className="row align-items-center position-relative">
+                <div className="col-3 ">
+                  <div className="site-logo">
+                    <img className="main-logo" src="/images/logo.png" alt="" />
+                    <a href="index.html">
+                      <strong>FY</strong>Sa3{" "}
+                      <span className="text-primary">.</span>{" "}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="col-9  text-right">
+                  <span className="d-inline-block d-lg-none">
+                    <a
+                      href="#"
+                      className="text-white site-menu-toggle js-menu-toggle py-5 text-white">
+                      <span className="icon-menu h3 text-white"></span>
+                    </a>
+                  </span>
+
+                  <Navbar handleClick={this.props.handleClick} />
+                </div>
               </div>
             </div>
-
-            <hr className="featurette-divider" />
-
-            <div className="row featurette">
-              <div className="col-md-7">
-                <h2 className="featurette-heading">
-                  First featurette heading.{" "}
-                  <span className="text-muted">It'll blow your mind.</span>
-                </h2>
-                <p className="lead">
-                  Donec ullamcorper nulla non metus auctor fringilla. Vestibulum
-                  id ligula porta felis euismod semper. Praesent commodo cursus
-                  magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                  ac cursus commodo.
-                </p>
-              </div>
-              <div className="col-md-5">
-                <img
-                  className="featurette-image img-fluid mx-auto"
-                  data-src="holder.js/500x500/auto"
-                  alt="Generic placeholder image"
-                />
+          </header>
+          <div className="ftco-blocks-cover-1">
+            <div
+              className="ftco-cover-1 overlay"
+              style={{ backgroundImage: "url('images/hero_1.jpg')" }}>
+              <div className="container">
+                <div className="row align-items-center">
+                  <div className="col-lg-5">
+                    <h1 className="line-bottom">
+                      Perfection is always in our mind.
+                    </h1>
+                  </div>
+                  <div className="col-lg-5 ml-auto"></div>
+                </div>
               </div>
             </div>
-
-            <hr className="featurette-divider" />
-
-            <div className="row featurette">
-              <div className="col-md-7 order-md-2">
-                <h2 className="featurette-heading">
-                  Oh yeah, it's that good.{" "}
-                  <span className="text-muted">See for yourself.</span>
-                </h2>
-                <p className="lead">
-                  Donec ullamcorper nulla non metus auctor fringilla. Vestibulum
-                  id ligula porta felis euismod semper. Praesent commodo cursus
-                  magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                  ac cursus commodo.
-                </p>
-              </div>
-              <div className="col-md-5 order-md-1">
-                <img
-                  className="featurette-image img-fluid mx-auto"
-                  data-src="holder.js/500x500/auto"
-                  alt="Generic placeholder image"
-                />
-              </div>
-            </div>
-
-            <hr className="featurette-divider" />
-
-            <div className="row featurette">
-              <div className="col-md-7">
-                <h2 className="featurette-heading">
-                  And lastly, this one.{" "}
-                  <span className="text-muted">Checkmate.</span>
-                </h2>
-                <p className="lead">
-                  Donec ullamcorper nulla non metus auctor fringilla. Vestibulum
-                  id ligula porta felis euismod semper. Praesent commodo cursus
-                  magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                  ac cursus commodo.
-                </p>
-              </div>
-              <div className="col-md-5">
-                <img
-                  className="featurette-image img-fluid mx-auto"
-                  data-src="holder.js/500x500/auto"
-                  alt="Generic placeholder image"
-                />
-              </div>
-            </div>
-
-            <hr className="featurette-divider" />
           </div>
 
-          <footer className="container">
-            <p className="float-right">
-              <a href="#">Back to top</a>
-            </p>
-            <p>
-              &copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a>{" "}
-              &middot; <a href="#">Terms</a>
-            </p>
+          <div className="site-section">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-5 pr-md-5 mr-auto">
+                  <h2 className="line-bottom">
+                    If You Have Project In Mind. Get A Quotation
+                  </h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Enim maiores mollitia qui quam labore hic asperiores
+                    provident maxime earum eum.
+                  </p>
+                </div>
+                <Login />
+              </div>
+            </div>
+          </div>
+          <footer className="site-footer">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-3">
+                  <img
+                    className="main-logo-footer"
+                    src="/images/logo.png"
+                    alt=""
+                  />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Debitis impedit, odit minima repellat, doloribus alias amet
+                    consequatur inventore.
+                  </p>
+                </div>
+                <div className="col-lg-8 ml-auto">
+                  <div className="row">
+                    <div className="col-lg-3">
+                      <h2 className="footer-heading mb-4">Quick Links</h2>
+                      <ul className="list-unstyled">
+                        <li>
+                          <a href="#">About Us</a>
+                        </li>
+                        <li>
+                          <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                          <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                          <a href="#">Privacy</a>
+                        </li>
+                        <li>
+                          <a href="#">Contact Us</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-lg-3">
+                      <h2 className="footer-heading mb-4">Quick Links</h2>
+                      <ul className="list-unstyled">
+                        <li>
+                          <a href="#">About Us</a>
+                        </li>
+                        <li>
+                          <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                          <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                          <a href="#">Privacy</a>
+                        </li>
+                        <li>
+                          <a href="#">Contact Us</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-lg-3">
+                      <h2 className="footer-heading mb-4">Quick Links</h2>
+                      <ul className="list-unstyled">
+                        <li>
+                          <a href="#">About Us</a>
+                        </li>
+                        <li>
+                          <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                          <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                          <a href="#">Privacy</a>
+                        </li>
+                        <li>
+                          <a href="#">Contact Us</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-lg-3">
+                      <h2 className="footer-heading mb-4">Quick Links</h2>
+                      <ul className="list-unstyled">
+                        <li>
+                          <a href="#">About Us</a>
+                        </li>
+                        <li>
+                          <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                          <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                          <a href="#">Privacy</a>
+                        </li>
+                        <li>
+                          <a href="#">Contact Us</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row pt-5 mt-5 text-center">
+                <div className="col-md-12">
+                  <div className="border-top pt-5">
+                    <p>
+                      Copyright &copy;
+                      <script>
+                        document.write(new Date().getFullYear());
+                      </script>{" "}
+                      All rights reserved | This template is made with{" "}
+                      <i
+                        className="icon-heart text-danger"
+                        aria-hidden="true"></i>{" "}
+                      by Digital Dealers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </footer>
-        </main>
-        <h2>FYSA3</h2>
-        <button className="btn btn-success">Hello</button>
+        </div>
       </div>
     );
   }

@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 import axios from "axios";
-class Register extends Component {
+
+class WorkerRegister extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userName: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      location: "",
+      password: ""
+    };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    console.log(e.target.value);
+    this.setState({ [e.target.name]: e.target.value });
   }
   handleClick(event) {
-    var data = {
-      userName: this.refs.userName.value,
-      firstName: this.refs.firstName.value,
-      lastName: this.refs.lastName.value,
-      email: this.refs.email.value,
-      phone: this.refs.phone.value,
-      location: this.refs.location.value,
-      prof: this.refs.prof.value,
-      rate: this.refs.rate.value,
-      password: this.refs.password.value,
-      infos: this.refs.infos.value
-    };
+    event.preventDefault();
+    var data = this.state;
     console.log(data);
     axios
       .post("/register", { data })
@@ -33,65 +37,119 @@ class Register extends Component {
   render() {
     return (
       <div>
-
-    <div className="site-section bg-light">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-md-4 mx-auto">
-            <h2 className="line-bottom text-center">Registeration Form</h2>
-          </div>
-<!--         <h3>Worker Sign Up</h3>
-        <div className="infos">
-          <label htmlFor="userName">Username</label>
-          <input ref="userName" style={{ display: "block" }} />
-          <label htmlFor="firstName">First Name</label>
-          <input ref="firstName" style={{ display: "block" }} />
-          <label htmlFor="lastName">Last Name</label>
-          <input ref="lastName" style={{ display: "block" }} />
-          <label htmlFor="email">Email</label>
-          <input ref="email" style={{ display: "block" }} />
-          <label htmlFor="phone">Phone</label>
-          <input ref="phone" style={{ display: "block" }} />
-          <label htmlFor="location">Location</label>
-          <input ref="location" style={{ display: "block" }} />
-          <label htmlFor="password">Password</label>
-          <input ref="password" style={{ display: "block" }} />
-          <label htmlFor="infos">infos</label>
-          <input ref="infos" style={{ display: "block" }} />
-          <label htmlFor="prof">prof</label>
-          <input ref="prof" style={{ display: "block" }} />
-          <label htmlFor="rate">rate</label>
-          <input ref="rate" style={{ display: "block" }} /> -->
-
-        </div>
-        <div className="row">
-          <div className="col-lg-6 offset-3">
-            <div className="testimonial-3"><br/><br/><br/><br/><br/><br/><br/><br/>
-            <div className="quick-contact-form bg-white">
-                <h2>Please fill-in the form to register.</h2>
-                <form action="#" method="">
-                  <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Name"/>
+        <div>
+          <div className="site-section bg-light">
+            <div className="container">
+              <div className="row mb-5">
+                <div className="col-md-4 mx-auto">
+                  <h2 className="line-bottom text-center">
+                    Worker Registeration
+                  </h2>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 offset-3">
+                  <div className="testimonial-3">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div className="quick-contact-form bg-white">
+                      <h2>Please fill-in the form to register.</h2>
+                      <form>
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.userName}
+                            name="userName"
+                            onChange={this.handleChange}
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="User name"
+                          />
+                        </div>{" "}
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.firstName}
+                            name="firstName"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="First Name"
+                          />
+                        </div>{" "}
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.LastName}
+                            name="LastName"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Last Name"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="email"
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Email"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.phone}
+                            name="phone"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Phone Number"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            value={this.state.location}
+                            name="location"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Location"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="password"
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleChange}
+                            className="form-control"
+                            placeholder="Password"
+                          />
+                        </div>
+                        <div className="form-group">
+                          <input
+                            type="submit"
+                            value="Send Message"
+                            className="btn btn-primary px-5"
+                          />
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <input type="email" className="form-control" placeholder="Email"/>
-                  </div>
-                  <div className="form-group">
-                    <textarea name="" className="form-control" id="" cols="30" rows="5" placeholder="Message"></textarea>
-                  </div>
-                  <div className="form-group">
-                    <input type="submit" value="Send Message" className="btn btn-primary px-5"/>
-                  </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
- </div>
     );
   }
 }
 
-export default Register;
+export default WorkerRegister;
