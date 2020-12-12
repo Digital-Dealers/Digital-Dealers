@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
 var db = require("../database-mongo");
 
 var app = express();
@@ -23,6 +22,17 @@ app.get("/api/profs", function (req, res) {
   });
 });
 
+app.post("/api/workers", function (req, res) {
+  db.selectWorkers(req.body.prof, function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      console.log("data", data);
+      res.json(data);
+    }
+  });
+});
+
 app.post("/login", (req, res) => {
   console.log(req.body);
   db.selectOneWorker(req.body, (err, worker) => {
@@ -36,10 +46,10 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  //to do
   console.log(req.body.data);
-
-  db.addWorker(req.body.data, (err, worker) => {
+  var data = req.body.data;
+  data.rate = 0;
+  db.addWorker(data, (err, worker) => {
     if (err) {
       res.send("user not created");
     } else {
