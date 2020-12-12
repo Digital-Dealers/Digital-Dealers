@@ -47,7 +47,9 @@ app.post("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
   console.log(req.body.data);
-  db.addWorker(req.body.data, (err, worker) => {
+  var data = req.body.data;
+  data.rate = 0;
+  db.addWorker(data, (err, worker) => {
     if (err) {
       res.send("user not created");
     } else {
