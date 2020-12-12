@@ -103,7 +103,7 @@ class App extends React.Component {
                 <div className="row align-items-center">
                   <div className="col-lg-5">
                     <h1 className="line-bottom">
-                      Perfection is always in our mind.
+                      Digital-Dealers are at your service.
                     </h1>
                   </div>
                   <div className="col-lg-5 ml-auto"></div>
