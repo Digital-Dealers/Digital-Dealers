@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Register from "./components/workerRegister.jsx";
 import WorkerLogin from "./components/WorkerLogin.jsx";
 import ListProf from "./components/ListProf.jsx";
-import Listworker from "./components/Listworker.jsx";
 import OrdersList from "./components/OrdersList.jsx";
 import UserLogin from "./components/UserLogin.jsx";
 import Feeds from './components/feeds/feeds.jsx'
@@ -12,7 +11,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
       workers: []
     };
   }

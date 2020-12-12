@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
 var db = require("../database-mongo");
 
 var app = express();
@@ -18,6 +17,17 @@ app.get("/profs", function (req, res) {
     if (err) {
       res.sendStatus(500);
     } else {
+      res.json(data);
+    }
+  });
+});
+
+app.post("/api/workers", function (req, res) {
+  db.selectWorkers(req.body.prof, function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      console.log("data", data);
       res.json(data);
     }
   });
