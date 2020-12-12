@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "/../react-client/dist"));
 
-app.get("/api/profs", function (req, res) {
+app.get("/profs", function (req, res) {
   db.selectAllProf(function (err, data) {
     if (err) {
       res.sendStatus(500);
@@ -36,9 +36,7 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  //to do
   console.log(req.body.data);
-
   db.addWorker(req.body.data, (err, worker) => {
     if (err) {
       res.send("user not created");
