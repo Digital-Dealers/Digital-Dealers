@@ -3,10 +3,6 @@ import ReactDOM from "react-dom";
 import Register from "./components/workerRegister.jsx";
 import UserRegister from "./components/UserRegister.jsx";
 import Home from "./components/Home.jsx";
-import WorkerLogin from "./components/Login.jsx";
-import ListProf from "./components/ListProf.jsx";
-import OrdersList from "./components/OrdersList.jsx";
-import Button from "react-bootstrap/Button";
 
 class App extends React.Component {
   constructor(props) {
